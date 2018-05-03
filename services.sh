@@ -3,7 +3,7 @@ glusterFlag="false"
 glusterfsdFlag="false"
 glusterdFlag="false"
 glusterfsFlag="false"
-ps aux | grep gluster > tmp
+ps aux | grep gluster > /tmp/tmp.txt
 while read LINE
 do
 
@@ -25,7 +25,7 @@ do
         else
                 echo "sth"
         fi
-done < tmp
+done < /tmp/tmp.txt
 if [[ $glusterFlag == "false" || $glusterfsdFlag == "false" || $glusterdFlag == "false" || $glusterfsFlag == "false" ]]
 then
         # alert zabbix 
